@@ -11,6 +11,18 @@ import { StyleSheet,
     StatusBar} from 'react-native'
 
 export default function Login() {
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
+
+    function valida() {
+
+
+      if(email === 'moda' && senha === 'moda123'){
+        alert('senha certa')
+      }else{
+        alert('Email ou senha Incorretos!')
+      }
+    }
 
     const [offset]  = useState(new Animated.ValueXY({x: 0, y: 80}))
     const [opacity] = useState(new Animated.Value(0))
@@ -59,18 +71,20 @@ export default function Login() {
     ]}>
       
     <TextInput style={styles.input}
-      placeholder="   Email"
+      placeholder= "Email"
+      value = {email}
       autoCorrect={false}
-      onChangeText={()=>{}}
+      onChangeText={ (email)=> setEmail(email)}
     ></TextInput>
 
     <TextInput style={styles.input}
-      placeholder="   Senha"
+      placeholder="Senha"
+      value = {senha}
       autoCorrect={false}
-      onChangeText={()=>{}}
+      onChangeText={(senha)=>{ setSenha(senha)}}
     ></TextInput>
 
-    <TouchableOpacity style={styles.bntSubmit}>
+    <TouchableOpacity onPress={valida} style={styles.bntSubmit}>
       <Text style={styles.submitText}>Entrar</Text>
     </TouchableOpacity>
 

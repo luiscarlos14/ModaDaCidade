@@ -7,7 +7,7 @@ import React from 'react';
 
 //import Routes from './src/router'
 import Routes from './src/router'
-import {AppLoading} from 'expo'
+import Login from './src/pages/Login';
 import { View } from 'react-native';
 
 export default function App() {
@@ -17,7 +17,9 @@ export default function App() {
     <>
       <StatusBar style="light" backgroundColor='#000' translucent={false} />
        
-        < Routes/>
+       <Routes/>
+
+       {/* <Login /> */}
         
     </>
 
