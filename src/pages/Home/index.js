@@ -5,8 +5,8 @@ import Cards from '../../components/Cards/index'
 
 import {useNavigation} from '@react-navigation/native'
 
-
 export default function home() {
+
 const navigation = useNavigation();
 
  return (

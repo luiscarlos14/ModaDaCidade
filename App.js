@@ -5,6 +5,7 @@ import React from 'react';
 
 //import { StyleSheet, Text, View } from 'react-native';
 
+//import Routes from './src/router'
 import Routes from './src/router'
 import {AppLoading} from 'expo'
 import { View } from 'react-native';
@@ -15,7 +16,9 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" backgroundColor='#000' translucent={false} />
-      <Routes />
+       
+        < Routes/>
+        
     </>
 
   );

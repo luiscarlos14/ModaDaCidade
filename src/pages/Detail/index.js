@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native'
 import Dot from '../../components/Dot/index'
 import ButtonSize from '../../components/ButtonSize/index'
 
-export default function home() {
+export default function detalhes() {
   const navigation = useNavigation();
  return (
    <>
@@ -72,7 +72,7 @@ export default function home() {
           
             <Text style={styles.nameVendedor}> LOJA DO CHICO</Text>
 
-            <TouchableOpacity onPress={()=> navigation.navigate('LojaDoChico')} style={styles.bntVendedor}>
+            <TouchableOpacity onPress={()=> navigation.navigate('LojaDoChicoStack')} style={styles.bntVendedor}>
                 <Text  style={styles.bnttxt}>Entre em Contato</Text> 
             </TouchableOpacity>
 

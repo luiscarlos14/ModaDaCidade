@@ -1,21 +1,33 @@
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native'
+import  React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+import {
+  createDrawerNavigator, DrawerItemList,
+} from '@react-navigation/drawer';
+
 import {createStackNavigator} from '@react-navigation/stack'
 
-import Home        from './pages/Home';
-import Detail      from './pages/Detail';
-import LojaDoChico from './pages/LojaDoChico';
+import Home from './pages/Home'
+import Detail from './pages/Detail'
+import LojaDoChico from './pages/LojaDoChico'
 
+import CustomDrawer from './components/CustomDrawer';
+
+
+const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-function Routes(){
-    return(
-       <NavigationContainer>
 
-           <Stack.Navigator>
+ export default function MyDrawer() {
+  return (
+    <NavigationContainer>
+        <Drawer.Navigator initialRouteName={Home} drawerContent = {CustomDrawer}>
 
-               <Stack.Screen 
-                    name="Home"
+            <Drawer.Screen name="Home" component={Home} />
+            <Drawer.Screen name="Loja Do Chico" component={LojaDoChico} />
+
+            <Stack.Screen 
+                    name="HomeStack"
                     component={Home}
                     options={{headerShown: false}}
                />
@@ -27,14 +39,19 @@ function Routes(){
                />
 
            <Stack.Screen 
-                    name="LojaDoChico"
+                    name="LojaDoChicoStack"
                     component={LojaDoChico}
                     options={{headerShown: false}}
                /> 
 
-           </Stack.Navigator>
-       </NavigationContainer> 
-    )
+        </Drawer.Navigator>
+
+    </NavigationContainer>
+  );
 }
 
-export default Routes;
+
+
+    
+ 
+
